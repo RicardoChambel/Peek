@@ -6,9 +6,9 @@
 
 <p align="center">
   Fast and modern media viewer built with Electron.
+  Peek is a lightweight desktop app focused on clean UI, smooth media viewing and built-in format conversion powered by FFmpeg.
 </p>
 
-Peek is a lightweight desktop app focused on clean UI, smooth media viewing and built-in format conversion powered by FFmpeg.
 
 ### A modern alternative to your default photo and video viewer 😉
 
