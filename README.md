@@ -46,13 +46,10 @@ Peek is a lightweight desktop app focused on clean UI, smooth media viewing and 
 
 ## Screenshots
 
-> Add screenshots here later.
+![Preview](screenshots/darkPreview.png)
 
-Example:
+![Preview](screenshots/lightPreview.png)
 
-```md
-![Preview](screenshots/preview.png)
-```
 
 ---
 
