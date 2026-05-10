@@ -1,4 +1,4 @@
-# <img src="assets/peek-logo.png" width="32"> Peek
+# <img src="assets/peek-logo.png" width="64"> Peek
 
 Fast and modern media viewer built with Electron.
 
