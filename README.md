@@ -52,6 +52,13 @@ Peek is a lightweight desktop app focused on clean UI, smooth media viewing and 
 
 ---
 
+## Requirements
+
+- Node.js
+- FFmpeg
+
+---
+
 ## Installation
 
 ### Clone repository
@@ -72,6 +79,7 @@ npm install
 ```bash
 npm start
 ```
+
 ## Alternative installation
 
 ### Clone repository
