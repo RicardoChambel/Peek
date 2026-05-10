@@ -18,7 +18,7 @@
     "productName": "Peek",
     "win": {
         "target": "nsis",
-        "icon": "assets/peek-logo.ico"
+        "icon": "assets/peek-logo.png"
     },
     "nsis": {
       "oneClick": false,
