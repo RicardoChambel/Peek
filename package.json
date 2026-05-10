@@ -3,21 +3,22 @@
   "version": "1.0.0",
   "description": "Peek - Minimal photo viewer",
   "main": "main.js",
-  "scripts": {
+    "scripts": {
     "start": "electron .",
-    "build": "electron-builder --win"
-  },
+    "build": "electron-builder"
+    },
   "author": "Ricardo Chambel",
   "license": "MIT",
   "devDependencies": {
     "electron": "latest",
-    "electron-builder": "latest"
+    "electron-builder": "^26.8.1"
   },
   "build": {
     "appId": "com.ricardochambel.peek",
     "productName": "Peek",
     "win": {
-      "target": "nsis"
+        "target": "nsis",
+        "icon": "assets/icon.ico"
     },
     "nsis": {
       "oneClick": false,
