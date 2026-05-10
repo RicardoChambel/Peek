@@ -61,13 +61,6 @@
 
 ---
 
-## Requirements
-
-- Node.js
-- FFmpeg
-
----
-
 ## Installation
 
 ### Download the latest release
@@ -79,8 +72,28 @@ Download the latest installer from the Releases section.
 ```bash
 Run "Peek Setup 1.0.0.exe"
 ```
+---
 
-## Alternative installation
+## Built With
+
+* Electron
+* JavaScript
+* HTML5
+* CSS3
+* FFmpeg
+
+---
+
+# For Devs
+
+## Requirements for development
+
+- Node.js
+- FFmpeg
+
+---
+
+## Installation for development
 
 ### Clone repository
 
@@ -100,13 +113,3 @@ npm install
 ```bash
 npm start
 ```
-
----
-
-## Built With
-
-* Electron
-* JavaScript
-* HTML5
-* CSS3
-* FFmpeg
