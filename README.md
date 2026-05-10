@@ -1,6 +1,12 @@
-# <img src="assets/peek-logo.png" width="64"> Peek
+<p align="center">
+  <img src="assets/peek-logo.png" width="90" alt="Peek logo">
+</p>
 
-Fast and modern media viewer built with Electron.
+<h1 align="center">Peek</h1>
+
+<p align="center">
+  Fast and modern media viewer built with Electron.
+</p>
 
 Peek is a lightweight desktop app focused on clean UI, smooth media viewing and built-in format conversion powered by FFmpeg.
 
