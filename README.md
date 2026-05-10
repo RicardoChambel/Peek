@@ -11,7 +11,7 @@
   Peek is a lightweight desktop app focused on clean UI, smooth media viewing and built-in format conversion powered by FFmpeg.
 </p>
 
-### A modern alternative to your default photo and video viewer 😉
+<h1 align="center">AKA: The best alternative to your default photo and video viewer 😉</h1> 
 
 ---
 
