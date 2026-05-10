@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peek</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="app">
+
+        <header class="topbar">
+        <div class="brand">
+            <div class="brand-icon">
+                <img src="assets/peek-logo.png" alt="Peek logo">
+            </div>
+            <div>
+            <h1>Peek</h1>
+            <p class="subtitle">Fast and clean media viewer</p>
+            </div>
+        </div>
+
+        <div class="topbar-actions">
+            <button id="themeBtn" class="icon-btn" title="Alternar tema" aria-label="Alternar tema claro/escuro">
+            <span class="theme-icon theme-icon--dark">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.22 3.22l1.06 1.06M11.72 11.72l1.06 1.06M3.22 12.78l1.06-1.06M11.72 4.28l1.06-1.06M8 11a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+            </span>
+            <span class="theme-icon theme-icon--light">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M13.5 8.5A5.5 5.5 0 017 2.5c0-.28.02-.55.06-.82A6 6 0 1013.82 8.44c-.1.04-.21.06-.32.06z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            </button>
+            <hr>
+            <button id="converterBtn" class="icon-btn" title="Convert media" aria-label="Convert media">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 4h8.5M9 2l2.5 2L9 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13 12H4.5M7 10l-2.5 2L7 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            </button>
+            <button id="openBtn" class="open-btn">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                <path d="M7.5 2v11M2 7.5l5.5-5.5 5.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Open Media
+            </button>
+            <div class="window-controls">
+                <button id="minimizeBtn" class="window-btn" aria-label="Minimizar">−</button>
+                <button id="maximizeBtn" class="window-btn" aria-label="Maximizar">□</button>
+                <button id="closeBtn" class="window-btn close" aria-label="Fechar">×</button>
+            </div>
+        </div>
+        </header>
+
+        <section class="viewer">
+        <button class="nav-btn left" id="prevBtn" aria-label="Anterior">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M12 5l-5 5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <div class="image-area" id="imageArea">
+            <div class="drop-overlay" id="dropOverlay">
+            <p>Drop media here to open with Peek</p>
+            </div>
+
+            <div class="empty-state" id="emptyState">
+            <div class="empty-icon">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <rect x="3" y="7" width="30" height="22" rx="3" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="12" cy="15" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M3 24l7-5 5 4 5-6 8 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <p>Open a media file to get started</p>
+            <span>Supported formats: JPG, PNG, GIF, WEBP, MP4, WEBM, AVI</span>
+            </div>
+
+            <img id="photo" alt="Foto aberta no Peek" />
+
+            <!-- Video wrapper with custom controls -->
+            <div class="video-wrapper" id="videoWrapper">
+            <video id="video"></video>
+
+            <!-- Click overlay to play/pause + ripple feedback -->
+            <div class="video-click-area" id="videoClickArea">
+                <div class="play-ripple" id="playRipple">
+                <!-- Play icon inside ripple -->
+                <svg class="ripple-play" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M6 4l14 8-14 8V4z" fill="currentColor"/>
+                </svg>
+                <svg class="ripple-pause" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:none">
+                    <rect x="4" y="3" width="5" height="18" rx="1.5" fill="currentColor"/>
+                    <rect x="15" y="3" width="5" height="18" rx="1.5" fill="currentColor"/>
+                </svg>
+                </div>
+            </div>
+
+            <!-- Custom controls bar -->
+            <div class="video-controls" id="videoControls">
+                <!-- Progress / scrub bar -->
+                <div class="progress-wrap" id="progressWrap">
+                <div class="progress-track" id="progressTrack">
+                    <div class="progress-buffered" id="progressBuffered"></div>
+                    <div class="progress-fill" id="progressFill"></div>
+                    <div class="progress-thumb" id="progressThumb"></div>
+                </div>
+                <div class="time-tooltip" id="timeTooltip">0:00</div>
+                </div>
+
+                <!-- Buttons row -->
+                <div class="controls-row">
+                <div class="controls-left">
+
+                    <button class="vc-btn" id="playPauseBtn" aria-label="Play/Pause">
+                    <svg class="icon-play" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M3 1.5l9 5.5-9 5.5V1.5z" fill="currentColor"/>
+                    </svg>
+                    <svg class="icon-pause" width="14" height="14" viewBox="0 0 14 14" fill="none" style="display:none">
+                        <rect x="2" y="1.5" width="3.5" height="11" rx="1" fill="currentColor"/>
+                        <rect x="8.5" y="1.5" width="3.5" height="11" rx="1" fill="currentColor"/>
+                    </svg>
+                    </button>
+
+                    <button class="vc-btn" id="muteBtn" aria-label="Mute/Unmute">
+                    <svg class="icon-vol" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M2.5 5.5H1v3h1.5L6 11V3L2.5 5.5z" fill="currentColor"/>
+                        <path d="M9.5 4.5a3 3 0 010 5M11.5 2.5a5.5 5.5 0 010 9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                    </svg>
+                    <svg class="icon-mute" width="14" height="14" viewBox="0 0 14 14" fill="none" style="display:none">
+                        <path d="M2.5 5.5H1v3h1.5L6 11V3L2.5 5.5z" fill="currentColor"/>
+                        <path d="M11.5 5l-3.5 4M8 5l3.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                    </svg>
+                    </button>
+
+                    <div class="volume-wrap">
+                    <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.01" value="1" aria-label="Volume"/>
+                    </div>
+
+                    <span class="vc-time" id="vcTime">0:00 / 0:00</span>
+                </div>
+
+                <div class="controls-right">
+                    <button class="vc-btn" id="fullscreenBtn" aria-label="Ecrã inteiro">
+                    <svg class="icon-fs" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M1.5 5V1.5H5M9 1.5h3.5V5M12.5 9v3.5H9M5 12.5H1.5V9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <svg class="icon-fs-exit" width="14" height="14" viewBox="0 0 14 14" fill="none" style="display:none">
+                        <path d="M5 1.5v3.5H1.5M12.5 5H9V1.5M9 12.5V9h3.5M1.5 9H5v3.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    </button>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <button class="nav-btn right" id="nextBtn" aria-label="Próxima">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M8 5l5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        </section>
+
+        <footer class="footer">
+        <div class="footer-left">
+            <span class="file-dot" id="fileDot"></span>
+            <span id="fileName">No media open</span>
+        </div>
+        <span id="counter" class="counter">—</span>
+        </footer>
+
+        <div class="converter-panel" id="converterPanel">
+        <div class="converter-card">
+            <div class="converter-header">
+            <div>
+                <h2>Format Converter</h2>
+                <p>Convert media files to another compatible format</p>
+            </div>
+            <button id="closeConverterBtn" class="window-btn close">×</button>
+            </div>
+
+            <label class="converter-drop" for="converterInput" id="converterDrop">
+                <input id="converterInput" type="file" accept="image/*,video/*" hidden>
+
+                <div class="converter-empty" id="converterEmpty">
+                    <span>Choose or drop a media file</span>
+                </div>
+
+                <img id="converterPreviewImage" class="converter-preview-media" alt="Preview">
+
+                <video id="converterPreviewVideo" class="converter-preview-media" muted></video>
+
+                <div class="converter-preview-overlay" id="converterPreviewOverlay">
+                    <span id="converterPreviewType">MEDIA</span>
+                    <small id="converterPreviewName">Change file</small>
+                </div>
+            </label>
+
+            <div class="converter-info">
+            <span>Current format</span>
+            <strong id="currentFormat">—</strong>
+            </div>
+
+            <div class="converter-info">
+            <span>Convert to</span>
+            <select id="targetFormat">
+                <option value="">Choose format</option>
+            </select>
+            </div>
+
+            <button id="convertBtn" class="convert-btn" disabled>Convert & Download</button>
+
+            <p class="converter-status" id="converterStatus"></p>
+            <div class="converter-progress">
+                <div id="converterProgressFill"></div>
+            </div>
+            </div>
+        </div>
+    </main>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
