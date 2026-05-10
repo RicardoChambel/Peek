@@ -12,10 +12,9 @@ Peek is a lightweight desktop app focused on clean UI, smooth media viewing and 
 * Image viewer
 * Video player with custom controls
 * Drag & drop support
-* Folder navigation
-* Keyboard shortcuts
+* Folder files navigation
 * Dark / Light theme
-* Built-in media converter
+* Built-in media format converter
 * FFmpeg video conversion
 * Image format conversion
 * Fullscreen support
@@ -73,6 +72,20 @@ npm install
 ```bash
 npm start
 ```
+## Alternative installation
+
+### Clone repository
+
+```bash
+git clone https://github.com/RicardoChambel/Peek.git
+cd Peek
+```
+
+### Run setup (batch file)
+
+```bash
+start setup.bat
+```
 
 ---
 
@@ -83,17 +96,6 @@ npm start
 * HTML5
 * CSS3
 * FFmpeg
-
----
-
-## Roadmap
-
-* Audio player support
-* Better conversion presets
-* Zoom controls
-* Metadata viewer
-* GPU accelerated conversion
-* Thumbnail grid mode
 
 ---
 
