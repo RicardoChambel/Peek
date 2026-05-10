@@ -63,6 +63,18 @@ Peek is a lightweight desktop app focused on clean UI, smooth media viewing and 
 
 ## Installation
 
+### Download the latest release
+
+Download the latest installer from the Releases section.
+
+### Install Peek
+
+```bash
+Run "Peek Setup 1.0.0.exe"
+```
+
+## Alternative installation
+
 ### Clone repository
 
 ```bash
@@ -80,21 +92,6 @@ npm install
 
 ```bash
 npm start
-```
-
-## Alternative installation
-
-### Clone repository
-
-```bash
-git clone https://github.com/RicardoChambel/Peek.git
-cd Peek
-```
-
-### Run setup (batch file)
-
-```bash
-start setup.bat
 ```
 
 ---
