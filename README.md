@@ -4,6 +4,8 @@ Fast and modern media viewer built with Electron.
 
 Peek is a lightweight desktop app focused on clean UI, smooth media viewing and built-in format conversion powered by FFmpeg.
 
+### A modern alternative to your default photo and video viewer 😉
+
 ---
 
 ## Features
@@ -12,10 +14,9 @@ Peek is a lightweight desktop app focused on clean UI, smooth media viewing and 
 * Image viewer
 * Video player with custom controls
 * Drag & drop support
-* Folder navigation
-* Keyboard shortcuts
+* Folder files navigation
 * Dark / Light theme
-* Built-in media converter
+* Built-in media format converter
 * FFmpeg video conversion
 * Image format conversion
 * Fullscreen support
@@ -46,17 +47,33 @@ Peek is a lightweight desktop app focused on clean UI, smooth media viewing and 
 
 ## Screenshots
 
-> Add screenshots here later.
+![Preview](screenshots/darkPreview.png)
 
-Example:
+![Preview](screenshots/lightPreview.png)
 
-```md
-![Preview](screenshots/preview.png)
-```
+
+---
+
+## Requirements
+
+- Node.js
+- FFmpeg
 
 ---
 
 ## Installation
+
+### Download the latest release
+
+Download the latest installer from the Releases section.
+
+### Install Peek
+
+```bash
+Run "Peek Setup 1.0.0.exe"
+```
+
+## Alternative installation
 
 ### Clone repository
 
@@ -86,17 +103,6 @@ npm start
 * HTML5
 * CSS3
 * FFmpeg
-
----
-
-## Roadmap
-
-* Audio player support
-* Better conversion presets
-* Zoom controls
-* Metadata viewer
-* GPU accelerated conversion
-* Thumbnail grid mode
 
 ---
 
