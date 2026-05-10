@@ -110,9 +110,3 @@ npm start
 * HTML5
 * CSS3
 * FFmpeg
-
----
-
-## License
-
-MIT License
